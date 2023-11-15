@@ -10,8 +10,6 @@ go build -o bin/filehisto
 
 ## Usage
 
-Check a folder's modtime and its 
-
 ```console
 $ bin/filehisto --path /tmp
 statistics for /tmp, total 20287 files

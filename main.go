@@ -63,7 +63,7 @@ func plot2(info []fs.FileInfo) error {
 	fmt.Printf("statistics for %s, total %d files\n", color.GreenString(*files), hist.Count)
 	histogram.Fprintf(os.Stdout, hist, histogram.Linear(*bucket), func(v float64) string {
 		if *absTime {
-			return color.YellowString(time.Unix(int64(v), 0).Format("2006/01/02 15:04:05"))
+			return color.YellowString(time.Unix(int64(v), 0).Format(time.RFC3339))
 		}
 		return color.YellowString(fmt.Sprintf("%15s", now.Sub(time.Unix(int64(v), 0)).Truncate(time.Second))) + " ago"
 	})
